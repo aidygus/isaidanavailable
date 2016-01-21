@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Laravel</title>
+        <title>Is Aidan Available for hire?</title>
 
         <link href="https://fonts.googleapis.com/css" rel="stylesheet" type="text/css">
         <META HTTP-EQUIV="refresh" CONTENT="15">
@@ -28,6 +28,12 @@
                 text-align: center;
                 display: table-cell;
                 vertical-align: text-top;
+            }
+
+            .footer {
+                text-align: center;
+                display: table-cell;
+                vertical-align: text-bottom;
             }
 
             .content {
@@ -70,6 +76,6 @@
                 <div class="subtitle1">Current contract is due to expire on March 25th 2016</div>
                 <div class="subtitle2">Here are some pictures of Northumberland while you are waiting</div>
             </div>
-        </div>
+        </div>    
     </body>
 </html>
