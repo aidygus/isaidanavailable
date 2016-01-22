@@ -14,7 +14,7 @@
             }
 
             body {
-                margin: 0;
+                margin: 0 auto;
                 padding: 0;
                 width: 100%;
                 display: table;
@@ -36,11 +36,6 @@
                 text-align: center;
                 display: table-cell;
                 vertical-align: text-bottom;
-            }
-
-            .clock-builder-output {
-              text-align: center;
-              display: inline-block;
             }
 
             .content {
@@ -74,6 +69,14 @@
               background:#7f7f7f;
               background:rgba(255,255,255,0.6);
             }
+
+            .clock-container {
+              display:inline-block;
+              width:auto;
+            }
+            .clock-builder-output {
+              text-align: center;
+            }
         </style>
 
 
@@ -85,7 +88,9 @@
                 <div class="subtitle1">Current contract is due to expire on March 25th 2016</div>
                 <div class="subtitle2">Here are some pictures of Northumberland while you are waiting</div>
             </div>
-            <div class="clock-builder-output"></div>
+            <div class="clock-container">
+              <div class="clock-builder-output"></div>
+            </div>
         </div>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script type="text/javascript" src="clock_assets/flipclock.js"></script>
@@ -98,9 +103,7 @@ $(function(){
 		countdown: true,
 		language: 'Custom'
 	};
-	var countdown = 1458925200 - ((new Date().getTime())/1000); // from: 03/25/2016 05:00 pm +0000
-	countdown = Math.max(1, countdown);
-	$('.clock-builder-output').FlipClock(countdown, opts);
+	$('.clock-builder-output').FlipClock({{$seconds}}, opts);
 });
 </script>
     </body>
