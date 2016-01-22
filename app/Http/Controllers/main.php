@@ -11,12 +11,16 @@ class main extends Controller
 {
     public function index()
     {
-    	$files = \File::allFiles('img');
-    	$img = rand(0,count($files)-1);
+    	$files = \File::allFiles('img/bg');
       $now = time();
       $future_date = strtotime('2016-03-25 17:00:00');
+      $images = array();
+      foreach($files as $file)
+      {
+      		$images[] = (string)$file;
+      }
 
       $interval = $future_date - $now;
-    	return view('welcome',['image'=>(string)$files[$img],'seconds'=>$interval]);
+    	return view('welcome',['images'=>$images,'seconds'=>$interval]);
     }
 }

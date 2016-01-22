@@ -6,7 +6,6 @@
         <link href="https://fonts.googleapis.com/css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="/css/flipclock.css">
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-        <META HTTP-EQUIV="refresh" CONTENT="15">
 
         <style>
             html, body {
@@ -20,10 +19,10 @@
                 display: table;
                 font-weight: 100;
                 font-family: 'Lato';
-                background-image: url('/{{ $image }}');
                 background-size:cover;
                 background-repeat: no-repeat;
                 background-position: center center;
+                content: @foreach($images as $image) "url('{{$image}}')" @endforeach;
             }
 
             .container {
@@ -71,6 +70,7 @@
             }
 
             .clock-container {
+                margin:20px;
               display:inline-block;
               width:auto;
             }
@@ -106,6 +106,27 @@ $(function(){
 	};
 	$('.clock-builder-output').FlipClock({{$seconds}}, opts);
 });
-</script>
+
+        $(function () {
+            var body = $('body');
+            var backgrounds = [
+            @foreach($images as $image)
+              "url('{{$image}}')", 
+            @endforeach]
+            var current = 0;
+
+            function nextBackground() {
+                console.log("Changing");
+                $('body').css(
+                    'background-image',
+                backgrounds[current = ++current % backgrounds.length]);
+
+                setTimeout(nextBackground, 30000);
+            }
+            setTimeout(nextBackground, 30000);
+            $('body').css('background-image', backgrounds[0]);
+        });
+
+        </script>
     </body>
 </html>
