@@ -90,6 +90,7 @@
             </div>
             <div class="clock-container">
               <div class="clock-builder-output"></div>
+              <a href="http://www.dwuser.com/education/content/easy-javascript-jquery-countdown-clock-builder/">flipclock</a>
             </div>
         </div>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
