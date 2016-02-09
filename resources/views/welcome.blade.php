@@ -84,8 +84,8 @@
     <body>
         <div class="container">
             <div class="content transparent">
-                <div class="title">Aidan is not currently available</div>
-                <div class="subtitle1">Current contract is due to expire on March 25th 2016</div>
+                <div class="title">Aidan is currently actively seeking next role</div>
+                <div class="subtitle1">Current contract is due to expire on March 25th 2016 and am now actively looking for positions with a start date of 28th March onwards</div>
                 <div class="subtitle2">Here are some pictures of Northumberland while you are waiting</div>
                 <div class="subtitle2">
                     <table align="center">
@@ -128,7 +128,7 @@ $(function(){
             var body = $('body');
             var backgrounds = [
             @foreach($images as $image)
-              "url('{{$image}}')", 
+              "url('{{$image}}')",
             @endforeach]
             var current = 0;
 
